@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/alpine
+{
+	"name": "Debian",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Debian version: bullseye, buster
+		// Use bullseye on local arm64/Apple Silicon.
+		"args": { "VARIANT": "bullseye" }
+	},
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "zsh",
+		"workbench.colorTheme": "Arc Dark"
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	 "forwardPorts": [3000],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Replace when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--init", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"redhat.ansible",
+				"CoenraadS.bracket-pair-colorizer-2",
+				"samuelcolvin.jinjahtml",
+				"ms-azuretools.vscode-docker",
+				"vscode-icons-team.vscode-icons",
+				"redhat.vscode-yaml",
+				"p1c2u.docker-compose",
+				"oderwat.indent-rainbow",
+				"rogalmic.bash-debug",
+				"Github.github-vscode-ignoreVscodeTheme",
+				"GitHub.github-vscode-theme"
+			]
+		}
+	}
+}
