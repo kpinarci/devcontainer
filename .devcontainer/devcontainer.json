@@ -10,7 +10,7 @@
 	},
 	"settings": {
 		"terminal.integrated.defaultProfile.linux": "zsh",
-		"workbench.colorTheme": "Arc Dark"
+		"workbench.colorTheme": "Winter is Coming (Dark Black)"
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	 "forwardPorts": [3000],
@@ -36,7 +36,9 @@
 				"oderwat.indent-rainbow",
 				"rogalmic.bash-debug",
 				"Github.github-vscode-ignoreVscodeTheme",
-				"GitHub.github-vscode-theme"
+				"GitHub.github-vscode-theme",
+				"PKief.material-icon-theme",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}
