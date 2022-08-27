@@ -1,0 +1,10 @@
+---
+roles:
+  # Install a role from Ansible Galaxy.
+  - name: geerlingguy.docker
+
+collections:
+  # Install a collection from Ansible Galaxy.
+  - name: community.docker
+    version: 3.0.2
+    #source: ansible-galaxy collection install community.docker

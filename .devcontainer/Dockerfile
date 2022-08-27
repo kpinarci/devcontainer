@@ -52,5 +52,9 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 # Make sure systemd doesn't start agettys on tty[1-6].
 RUN rm -f /lib/systemd/system/multi-user.target.wants/getty.target
 
+# Install Ansible collections
+RUN mkdir -p /tmp/collection && chown vscode:vscode /tmp/collection -R
+COPY requirements.yml /tmp/collection/
+
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/lib/systemd/systemd"]
