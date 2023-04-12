@@ -38,7 +38,7 @@ RUN apt-get update \
 RUN pip3 install --upgrade pip
 
 # Install Ansible via pip.
-RUN pip3 install $pip_packages
+RUN pip3 install $pip_packages 
 
 RUN pip3 install mitogen
 
@@ -55,6 +55,10 @@ RUN rm -f /lib/systemd/system/multi-user.target.wants/getty.target
 # Install Ansible collections
 RUN mkdir -p /tmp/collection && chown vscode:vscode /tmp/collection -R
 COPY requirements.yml /tmp/collection/
+
+# Install Hasicorp Packer
+RUN wget https://releases.hashicorp.com/packer/1.7.4/packer_1.7.4_linux_amd64.zip -P /tmp && \
+    unzip /tmp/packer_1.7.4_linux_amd64.zip -d /usr/local/bin/
 
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/lib/systemd/systemd"]
